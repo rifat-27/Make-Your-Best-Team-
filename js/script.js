@@ -77,7 +77,6 @@ function calculateTotalCost() {
 let playerCostBtn = document.getElementById('player-cost-btn')
 playerCostBtn.addEventListener('click', () => {
   let totalPlayerCost = calculatePlayerCost()
-  document.getElementById('cost-per-player').value = ''
   document.getElementById('player-cost').innerText = totalPlayerCost
 })
 
