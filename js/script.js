@@ -1,9 +1,12 @@
-let selectedPlayerListElement = document.getElementById('selected-players')
-let selectedPlayerNumber = selectedPlayerListElement.childElementCount
-
+function getPlayerNumber() {
+  let selectedPlayerListElement = document.getElementById('selected-players')
+  let selectedPlayerNumber = selectedPlayerListElement.childElementCount
+  return selectedPlayerNumber
+}
 function playerAddInList(btn) {
   let playerInListElement = document.createElement('li')
-  if (selectedPlayerNumber < 5) {
+  let playerNumber = getPlayerNumber()
+  if (playerNumber < 5) {
     btn.style.backgroundColor = 'gray'
     btn.setAttribute('disabled', '')
     let playerNameElement = btn.previousElementSibling
@@ -11,7 +14,7 @@ function playerAddInList(btn) {
 
     playerInListElement.innerText = playerName
     playerInListElement.setAttribute('class', 'mt-6')
-    selectedPlayerListElement.appendChild(playerInListElement)
+    document.getElementById('selected-players').appendChild(playerInListElement)
   } else alert('5 players already selected!')
 }
 
@@ -45,21 +48,22 @@ btn6.addEventListener('click', () => {
   playerAddInList(btn6)
 })
 
-let playerCostBtn = document.getElementById('player-cost-btn')
-playerCostBtn.addEventListener('click', () => {
+function calculatePlayerCost() {
   let costPerPlayerString = document.getElementById('cost-per-player').value
   let costPerPlayer = parseFloat(costPerPlayerString)
-  if (costPerPlayer != 'NaN') {
-    let totalPlayerCost = costPerPlayer * selectedPlayerNumber
-    document.getElementById('player-cost').innerText = totalPlayerCost
-    console.log(
-      costPerPlayerString +
-        ' ' +
-        costPerPlayer +
-        ' ' +
-        selectedPlayerNumber +
-        ' ' +
-        totalPlayerCost
-    )
-  } else alert('Please enter a number!')
+  let playerNumber = getPlayerNumber()
+  if (!isNaN(costPerPlayer)) {
+    let totalPlayerCost = costPerPlayer * playerNumber
+    return totalPlayerCost
+  } else {
+    alert('Please enter a number!')
+    return 0
+  }
+}
+
+let playerCostBtn = document.getElementById('player-cost-btn')
+playerCostBtn.addEventListener('click', () => {
+  let totalPlayerCost = calculatePlayerCost()
+  document.getElementById('cost-per-player').value = ''
+  document.getElementById('player-cost').innerText = totalPlayerCost
 })
