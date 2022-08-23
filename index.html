@@ -98,7 +98,7 @@
           <input
             id="cost-per-player"
             type="text"
-            class="w-1/2 h-8 text-black"
+            class="w-1/2 h-8 text-slate-200 border-slate-200 border-2 bg-black"
           />
         </div>
         <button
@@ -110,11 +110,19 @@
         <p>Player Expenses: $<span id="player-cost"></span></p>
         <div class="flex justify-evenly align-center my-6">
           <p>Manager</p>
-          <input id="manager-cost" type="text" class="w-1/2 text-black" />
+          <input
+            id="manager-cost"
+            type="text"
+            class="w-1/2 text-slate-200 border-2 border-slate-200 bg-black"
+          />
         </div>
         <div class="flex justify-evenly align-center my-6">
           <p>Coach</p>
-          <input id="coach-cost" type="text" class="w-1/2 text-black" />
+          <input
+            id="coach-cost"
+            type="text"
+            class="w-1/2 text-slate-200 border-2 border-slate-200 bg-black"
+          />
         </div>
         <button
           id="total-cost-btn"
@@ -122,7 +130,7 @@
         >
           Calculate Total
         </button>
-        <p>Total $<span id="total-cost"></span></p>
+        <p>Total: $<span id="total-cost"></span></p>
       </div>
     </section>
     <script src="/js/script.js"></script>

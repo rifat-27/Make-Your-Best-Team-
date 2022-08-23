@@ -56,7 +56,20 @@ function calculatePlayerCost() {
     let totalPlayerCost = costPerPlayer * playerNumber
     return totalPlayerCost
   } else {
-    alert('Please enter a number!')
+    alert('Please enter a number in cost per player field!')
+    return 0
+  }
+}
+
+function calculateTotalCost() {
+  let managerCost = parseFloat(document.getElementById('manager-cost').value)
+  let coachCost = parseFloat(document.getElementById('coach-cost').value)
+  if (!isNaN(managerCost) && !isNaN(coachCost)) {
+    let totalPlayerCost = calculatePlayerCost()
+    let totalCost = totalPlayerCost + managerCost + coachCost
+    return totalCost
+  } else {
+    alert('Please enter number value as both manager cost and coach cost!')
     return 0
   }
 }
@@ -66,4 +79,13 @@ playerCostBtn.addEventListener('click', () => {
   let totalPlayerCost = calculatePlayerCost()
   document.getElementById('cost-per-player').value = ''
   document.getElementById('player-cost').innerText = totalPlayerCost
+})
+
+let totalCostBtn = document.getElementById('total-cost-btn')
+totalCostBtn.addEventListener('click', () => {
+  let totalTeamCost = calculateTotalCost()
+  document.getElementById('manager-cost').value = ''
+  document.getElementById('coach-cost').value = ''
+  document.getElementById('cost-per-player').value = ''
+  document.getElementById('total-cost').innerText = totalTeamCost
 })
