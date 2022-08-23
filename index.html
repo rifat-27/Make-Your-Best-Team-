@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Make Your Best Team!</title>
+  </head>
+  <body>
+    <section class="header h-auto bg-black">
+      <h1 class="pt-36 pb-20 text-6xl font-bold text-center text-emerald-200">
+        Make Your Best Team!
+      </h1>
+      <p class="px-96 pb-36 text-xl text-center text-white">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deleniti nihil
+        cumque nostrum inventore nam iste tempora eaque quae culpa facere sunt
+        libero eos laboriosam tenetur ad, velit, officiis, unde vel!
+      </p>
+    </section>
+
+    <section
+      class="bg-zinc-900 border-slate-100 text-white text-center px-36 py-16 grid grid-flow-row-dense grid-cols-4 gap-6"
+    >
+      <div class="bg-black">
+        <img src="/images/1.png" alt="virat" />
+        <h2 id="player-1" class="text-3xl font-semibold py-4">Virat Kohli</h2>
+        <button
+          id="myBtn-1"
+          class="text-xl font-medium w-5/6 h-10 mb-6 rounded-none bg-blue-700 hover:bg-blue-900"
+        >
+          SELECT
+        </button>
+      </div>
+      <div class="bg-black">
+        <img src="/images/2.png" alt="babar" />
+        <h2 id="player-2" class="text-3xl font-semibold py-4">Babar Azam</h2>
+        <button
+          id="myBtn-2"
+          class="text-xl font-medium w-5/6 h-10 mb-6 rounded-none bg-blue-700 hover:bg-blue-900"
+        >
+          SELECT
+        </button>
+      </div>
+      <div class="bg-black">
+        <img src="/images/3.png" alt="sakib" />
+        <h2 id="player-3" class="text-3xl font-semibold py-4">
+          Sakib Al Hasan
+        </h2>
+        <button
+          id="myBtn-3"
+          class="text-xl font-medium w-5/6 h-10 mb-6 rounded-none bg-blue-700 hover:bg-blue-900"
+        >
+          SELECT
+        </button>
+      </div>
+      <div class="pt-6 bg-black">
+        <h1 class="text-2xl font-medium">Selected Five</h1>
+        <ol
+          id="selected-players"
+          class="flex items-center flex-col list-decimal"
+        ></ol>
+      </div>
+      <div class="bg-black">
+        <img src="/images/4.png" alt="rashid" />
+        <h2 id="player-4" class="text-3xl font-semibold py-4">Rashid Khan</h2>
+        <button
+          id="myBtn-4"
+          class="text-xl font-medium w-5/6 h-10 mb-6 rounded-none bg-blue-700 hover:bg-blue-900"
+        >
+          SELECT
+        </button>
+      </div>
+      <div class="bg-black">
+        <img src="/images/5.png" alt="stokes" />
+        <h2 id="player-5" class="text-3xl font-semibold py-4">Ben Stokes</h2>
+        <button
+          id="myBtn-5"
+          class="text-xl font-medium w-5/6 h-10 mb-6 rounded-none bg-blue-700 hover:bg-blue-900"
+        >
+          SELECT
+        </button>
+      </div>
+      <div class="bg-black">
+        <img src="/images/6.png" alt="cummins" />
+        <h2 id="player-6" class="text-3xl font-semibold py-4">Pat Cummins</h2>
+        <button
+          id="myBtn-6"
+          class="text-xl font-medium w-5/6 h-10 mb-6 rounded-none bg-blue-700 hover:bg-blue-900"
+        >
+          SELECT
+        </button>
+      </div>
+      <div class="bg-black py-8 row-span-2">
+        <h1 class="text-3xl font-normal mb-4">Budget</h1>
+        <div class="flex justify-evenly align-center my-6">
+          <p>Per Player</p>
+          <input
+            id="cost-per-player"
+            type="text"
+            class="w-1/2 h-8 text-black"
+          />
+        </div>
+        <button
+          id="player-cost-btn"
+          class="text-xl font-medium w-5/6 h-10 mb-6 rounded-none bg-blue-700 hover:bg-blue-900"
+        >
+          Calculate
+        </button>
+        <p>Player Expenses: $<span id="player-cost"></span></p>
+        <div class="flex justify-evenly align-center my-6">
+          <p>Manager</p>
+          <input id="manager-cost" type="text" class="w-1/2 text-black" />
+        </div>
+        <div class="flex justify-evenly align-center my-6">
+          <p>Coach</p>
+          <input id="coach-cost" type="text" class="w-1/2 text-black" />
+        </div>
+        <button
+          id="total-cost-btn"
+          class="text-xl font-medium w-5/6 h-10 mb-6 rounded-none bg-blue-700 hover:bg-blue-900"
+        >
+          Calculate Total
+        </button>
+        <p>Total $<span id="total-cost"></span></p>
+      </div>
+    </section>
+    <script src="/js/script.js"></script>
+  </body>
+</html>
